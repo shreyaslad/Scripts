@@ -1,5 +1,5 @@
-# Scripts
-A simple repo for hosting my shell scripts (gonna upload once I'm finished with them)
+# Scripts (alpha)
+A simple repo for hosting my shell scripts. This is still in relative alpha stages, so if anything doesn't work properly, then feel free to submit an issue.
 
 ## Installation
 Clone the `install.sh` file.
