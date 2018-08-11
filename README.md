@@ -14,7 +14,7 @@ Next, run the file:
 
 **MacOSX:**
 
-`chmod +x install.sh`
+`$ chmod +x install.sh`
 
 `$ ./install.sh`
 
@@ -30,7 +30,7 @@ Now that you ran the `install.sh` file, you should have the files. Any problem y
 
 **MacOSX:**
 
-`chmod +x filename.sh`
+`$ chmod +x filename.sh`
 
 `$filename.sh`
 
@@ -38,7 +38,7 @@ Now that you ran the `install.sh` file, you should have the files. Any problem y
 
 `C:>CACLS files /p /e filename.sh:f`
 
-`$sh filename.sh`
+`$ sh filename.sh`
 
 ## The Helper Tool
 
