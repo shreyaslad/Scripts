@@ -37,12 +37,12 @@ printf "\n"
 			echo "To start of, restart the program, and at the prompt, type in one of the following words in parenthesis above the prompt or the number next to it. If you type in anything not specified, you will get an error and you'll have to restart the process"
 	elif [ "$option" = "rename" ] || [ "$option" = "2" ]
 	then
-			printf "This is the rename section\n"
+			printf "Rename Files"
 			printf "What is the name of the file if its in this directory or the full directory (/Users/username/folder/folder/file) of the file if it's another one, followed by [ENTER]:"
 			read fileorig
 				if [ ! -f "$fileorig" ]
 				then
-					printf "$0: File ${fileorig} not found, terminating.\n\n"
+					printf "${RED}Fatal: ${NC}File ${fileorig} not found. Terminating.\n\n"
 					exit;
 				else 
 					printf "Type the new name of the file (including the extension and the directory), followed by [ENTER]:\n"
@@ -52,7 +52,7 @@ printf "\n"
 				fi
 	elif [ "$option" = "move" ] || [ "$option" = "3" ]
 	then
-			printf "This is the file moving section\n"
+			printf "Move Files"
 			printf "Enter the directory of the file, followed by [ENTER]:"
 			read fileold
 			if [ ! -f "$fileold" ]
@@ -73,13 +73,13 @@ printf "\n"
 			fi
 	elif [ "$option" = "rm" ] || [ "$option" = "4" ]
 	then
-		echo "This is the file/directory removing section\n"
+		echo "Removing Files/Directories"
 		printf "Enter the path to the file or directory you wish to remove, followed by [ENTER] (note, you may place more than one argument separated by a space):\n"
 		read filedir
 		rm -rf ${filedir}
 	elif [ "$option" = "copy" ] || [ "$option" = "5" ]
 	then
-			echo "This is the copy section"
+			echo "Copy Files/Directories"
 			echo "Enter the directory or file you wish to copy"
 			#$ cp -p source dir
 	elif [ "$option" = "extmv"] || [ "$option" = "6" ]
