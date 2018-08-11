@@ -55,15 +55,22 @@ printf "\n"
 			printf "This is the file moving section\n"
 			printf "Enter the directory of the file, followed by [ENTER]:"
 			read fileold
-			printf "Enter the directory of the new file destination (note: must be a folder), followed by [ENTER]:"
-			read newdir
-				if [ ! -f "$fileold" ] || [ ! -d "$newdir" ]
+			if [ ! -f "$fileold" ]
+			then
+				printf "${RED}Fatal:${NC} File ${fileold} does not exist. Terminating\n\n"
+				exit;
+			else
+				printf "Enter the directory of the new file destination (note: must be a folder), followed by [ENTER]:"
+				read newdir
+				if [ ! -d "$newdir" ]
 				then
-					echo "Something went wrong"
+					printf "${RED}Fatal: ${NC}Directory ${newdir} does not exist. Terminating\n\n"
+					exit;
 				else
 					mv ${fileold} ${newdir}
 					printf "File ${LIGHTGREEN}${fileold} ${NC}has been successfully moved to dir ${LIGHTGREEN}${newdir}/${NC}\n\n"
 				fi
+			fi
 	elif [ "$option" = "rm" ] || [ "$option" = "4" ]
 	then
 		echo "This is the file/directory removing section\n"
@@ -73,6 +80,8 @@ printf "\n"
 	elif [ "$option" = "copy" ] || [ "$option" = "5" ]
 	then
 			echo "This is the copy section"
+			echo "Enter the directory or file you wish to copy"
+			#$ cp -p source dir
 	elif [ "$option" = "extmv"] || [ "$option" = "6" ]
 	then	
 		echo "Under Construction"
