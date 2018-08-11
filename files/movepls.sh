@@ -77,7 +77,7 @@ printf "\n"
 		printf "Enter the path to the file or directory you wish to remove, followed by [ENTER] (note, you may place more than one argument separated by a space):\n"
 		read filedir
 		rm -rf ${filedir}
-		printf "${LIGHTGREEN}Successfully deleted ${fildir}."
+		printf "${LIGHTGREEN}Successfully deleted ${fildir}.${NC}\n\n"
 	elif [ "$option" = "copy" ] || [ "$option" = "5" ]
 	then
 			echo "Copy Files/Directories"
@@ -85,11 +85,31 @@ printf "\n"
 			#$ cp -p source dir
 	elif [ "$option" = "extmv"] || [ "$option" = "6" ]
 	then	
-		echo "Under Construction"
+		echo "Rename all files with an extension"
+		echo "Type in the directory of the files, followed by [ENTER]:"
+		read extdir
+		if [ ! -d "$extdir" ]
+		then
+			printf "${RED}Fatal: ${NC}Dir ${extdir} does not exit. Terminating.\n\n"
+			exit;
+		else
+			echo "Type in the directory that you want to move these files to, followed by [ENTER]:"
+			read mvdir
+			if [ ! -d "$mvdir" ]
+			then
+				printf "${RED}Fatal: ${NC}The directory you entered does not exist. Terminating.\n\n"
+				exit;
+			else
+				echo "Type in the extension of the files (don't include the period), followed by [ENTER]:"
+				read extfile
+				mv ${extdir}/*.${extfile} ${mvdir}
+				printf "${LIGHTGREEN}Successfully moved all files with .${extfile} extension in directory ${extdir} to directory ${mvdir}. \n\n${NC}"
+			fi
+		fi
 	elif [ "$option" = "extrename" ] || [ "$option" = "7" ]
 	then 
 		echo "Under Construction/"
 	else
-		printf "${RED}Fatal: ${NC}You entered a value that did not exist; terminating\n\n"
+		printf "${RED}Fatal: ${NC}You entered a value that does not exist. Terminating.\n\n"
 		exit;
 	fi
