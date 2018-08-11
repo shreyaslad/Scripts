@@ -89,6 +89,6 @@ printf "\n"
 	then 
 		echo "Under Construction/"
 	else
-		printf "${RED}Error: ${NC}You entered a value that did not exist; terminating \n \n"
+		printf "${RED}Fatal: ${NC}You entered a value that did not exist; terminating\n\n"
 		exit;
 	fi
