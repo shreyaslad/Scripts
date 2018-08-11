@@ -18,7 +18,7 @@ LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
 NC='\033[0m'
 
-printf "\nMove pls get out da wae!\n"
+printf "\nMove Pls Get Out Da Wae!\n"
 printf "Here are some things you can do: \n"
 printf "${LIGHTRED}1 ${NC}- learn more ${LIGHTRED}(help)${NC}\n"
 printf "${CYAN}2 ${NC}- rename a file ${CYAN}(rename)${NC}\n"
