@@ -85,7 +85,7 @@ printf "\n"
 			#$ cp -p source dir
 	elif [ "$option" = "extmv"] || [ "$option" = "6" ]
 	then	
-		echo "Rename all files with an extension"
+		echo "Move all files with an extension"
 		echo "Type in the directory of the files, followed by [ENTER]:"
 		read extdir
 		if [ ! -d "$extdir" ]
@@ -108,7 +108,7 @@ printf "\n"
 		fi
 	elif [ "$option" = "extrename" ] || [ "$option" = "7" ]
 	then 
-		echo "Under Construction/"
+		echo "Rename all files with an extension"
 	else
 		printf "${RED}Fatal: ${NC}You entered a value that does not exist. Terminating.\n\n"
 		exit;
