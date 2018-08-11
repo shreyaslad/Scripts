@@ -6,9 +6,9 @@ Clone the `install.sh` file.
 
 You have one of two methods:
 
-1. `git clone https://github.com/penetratingshot/Scripts/install.sh`
+1. `$ git clone https://github.com/penetratingshot/Scripts/install.sh`
 
-2. `curl -O https://raw.githubusercontent.com/penetratingshot/scripts/master/install.sh`
+2. `$ curl -O https://raw.githubusercontent.com/penetratingshot/scripts/master/install.sh`
 
 Next, run the file:
 
