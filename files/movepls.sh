@@ -90,14 +90,14 @@ printf "\n"
 		read extdir
 		if [ ! -d "$extdir" ]
 		then
-			printf "${RED}Fatal: ${NC}Dir ${extdir} does not exit. Terminating.\n\n"
+			printf "${RED}Fatal: ${NC}The directory ${extdir} does not exit. Terminating.\n\n"
 			exit;
 		else
 			echo "Type in the directory that you want to move these files to, followed by [ENTER]:"
 			read mvdir
 			if [ ! -d "$mvdir" ]
 			then
-				printf "${RED}Fatal: ${NC}The directory you entered does not exist. Terminating.\n\n"
+				printf "${RED}Fatal: ${NC}The ${mvdir} does not exist. Terminating.\n\n"
 				exit;
 			else
 				echo "Type in the extension of the files (don't include the period), followed by [ENTER]:"
@@ -109,6 +109,19 @@ printf "\n"
 	elif [ "$option" = "extrename" ] || [ "$option" = "7" ]
 	then 
 		echo "Rename all files with an extension"
+		echo "Enter the directory of the files, followed by [ENTER]:"
+		read extensiondir
+		if [ ! -d "$extensiondir" ]
+		then
+			printf "${RED}Fatal: ${NC}The directory ${extensiondir} does not exit. Terminating. \n\n"
+			exit;
+		else 
+			echo "Type the extension of the files (don't include the period), followed by [ENTER]:"
+			read extensionfile
+			echo "Enter the new name for the files (include the extension), followed by [ENTER]:"
+			read extrenamefile
+			mv ${extensiondir}/.${extensionfile} ${extrename}
+			printf "${LIGHTGREEN}Successfully renamed all files with extension .${extensionfile} in directory ${extensiondir} to ${extrenamefile}.\n\n${NC}"
 	else
 		printf "${RED}Fatal: ${NC}You entered a value that does not exist. Terminating.\n\n"
 		exit;
