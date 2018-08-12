@@ -80,9 +80,20 @@ printf "\n"
 		printf "${LIGHTGREEN}Successfully deleted ${fildir}.${NC}\n\n"
 	elif [ "$option" = "copy" ] || [ "$option" = "5" ]
 	then
-			echo "Copy Files/Directories"
-			echo "Enter the directory or file you wish to copy"
-			#$ cp -p source dir
+		echo "Copy Files"
+		echo "Enter the directory of the files (you can place multiple), followed by [ENTER]:"
+		read filedirectory
+		if [ ! -f "$filedirectory" ]
+		then
+			printf "${RED}Fatal: ${NC}The file ${filedirectory} does not exist. Terminating.\n\n"
+			exit;
+		else
+			echo "Enter new filename (include the extension), followed by [ENTER]:"
+			read newfilename
+			cp -p ${filedirectory} ${newfilename}
+			printf "${LIGHTGREEN}Successfully copied all contents of file ${filedirectory} to ${newfilename}.\n\n${NC}"
+			exit;
+		fi
 	elif [ "$option" = "extmv"] || [ "$option" = "6" ]
 	then	
 		echo "Move all files with an extension"
