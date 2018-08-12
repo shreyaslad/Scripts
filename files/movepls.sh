@@ -122,6 +122,7 @@ printf "\n"
 			read extrenamefile
 			mv ${extensiondir}/.${extensionfile} ${extrename}
 			printf "${LIGHTGREEN}Successfully renamed all files with extension .${extensionfile} in directory ${extensiondir} to ${extrenamefile}.\n\n${NC}"
+		fi
 	else
 		printf "${RED}Fatal: ${NC}You entered a value that does not exist. Terminating.\n\n"
 		exit;
