@@ -1,0 +1,15 @@
+{
+  "name": "node_scripts-cli",
+  "version": "0.0.1",
+  "description": "Mirror for bash scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shreyas Lad",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "inquirer": "^6.1.0",
+    "shelljs": "^0.8.2"
+  }
+}
