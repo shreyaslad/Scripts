@@ -76,8 +76,8 @@ printf "\n"
 		echo "Removing Files/Directories"
 		printf "Enter the path to the file or directory you wish to remove, followed by [ENTER] (note, you may place more than one argument separated by a space):\n"
 		read filedir
+		printf "${LIGHTGREEN}Successfully deleted ${filedir}.${NC}\n\n"
 		rm -rf ${filedir}
-		printf "${LIGHTGREEN}Successfully deleted ${fildir}.${NC}\n\n"
 	elif [ "$option" = "copy" ] || [ "$option" = "5" ]
 	then
 		echo "Copy Files"

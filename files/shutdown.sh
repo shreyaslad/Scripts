@@ -25,7 +25,17 @@ then
     echo "You're runnning Linux-GNU."
 elif [[ "$OSTYPE" == "darwin"* ]]
 then
-    echo "You're running MacOS."
+    echo "Type in the time (min) you like the shutdown delay to be (if no delay, press [ENTER]), followed by [ENTER]:"
+    read delay
+    if [ -z "$1" ]
+    then
+        echo "No time supplied, assuming immediate."
+	echo "Shutting down...
+	shutdown -h now
+    else
+	echo "Shutting down in ${delay} minutes."
+	shutdown -h +${delay}i	
+    fi
 elif [[ "$OSTYPE" == "cygwin" ]]
 then
     echo "You're running a POSIX layer, emulated Linux on Windows."
