@@ -30,7 +30,7 @@ then
     if [ -z "$1" ]
     then
         echo "No time supplied, assuming immediate."
-	echo "Shutting down...
+	echo "Shutting down..."
 	shutdown -h now
     else
 	echo "Shutting down in ${delay} minutes."
