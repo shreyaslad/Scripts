@@ -18,46 +18,86 @@ LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
 NC='\033[0m'
 
+testprompt() {
+    printf "Here are some options for managing your computer...\n"
+printf "${LIGHTRED}1.${NC} Shutdown\n"
+printf "2. Reboot\n"
+printf "3. Logout\n"
+printf "4. Halt\n\n"
+printf "Enter the number associated with the option you want, followed by [ENTER]: "
+read option
+if [ "$option" = "1" ]
+then
+    echo "Here are the shutdown options:"
+    printf "1. Shutdown Now\n"
+    printf "2. Shutdown with Delay\n"
+    printf "3. Shutdown with Date\n"
+    printf "4. Shutdown with Date and Delay\n"
+    printf "5. Abort Shutdown\n\n"
+    printf "Enter the number associated with the desired option, followed by [ENTER]: "
+    read option2
+elif [ "$OPTION" == "2" ]
+then
+    echo "Here are the reboot options:"
+    printf "1. Reboot Now\n"
+    printf "2. Reboot with Delay\n"
+    printf "3. Reboot with Date\n"
+    printf "4. Reboot with Date and Delay\n"
+    printf "5. Abort Reboot\n"
+    printf "Enter the number associated with the desired option, followed by [ENTER]: "
+    read option3
+elif [ "$OPTION" == "3" ]
+then
+    printf "Logging out..."
+    tell application "System Events" to log out
+elif [ "$OPTION" == "4" ]
+then
+    printf "Halting any shutdown ot logout processes..."
+    sudo halt
+else
+    printf "${RED}Fatal: ${NC}The option you've entered, ${option}, is not on the list.\n\n"
+    testprompt
+fi
+}
 
 printf "${RED}\nShutdown${NC}\n"
-printf "${BLUE}hi there${NC}\n"
 
-echo "Here are some options for managing your computer..."
-    echo "Enter the number associated with the desired option, followed by [ENTER]:"
-    
-    echo "1. Shutdown"
-    echo "2. Reboot"
-    echo "3. Logout"
-    echo "4. Halt"
-    read option
-    if [ "$option" = "1" ]
-    then
-        echo "Enter the number associated with the desired option, followed by [ENTER]:"
-        
-        echo "1. Shutdown Now"
-        echo "2. Shutdown with Delay"
-        echo "3. Shutdown with Date"
-        echo "4. Shutdown with Date and Delay"
-        echo "5. Abort Shutdown"
-        read option2
-    elif [ "$OPTION" == "2" ]
-    then
-        echo "Enter the number associated with the desired option, followed by [ENTER]:"
-        
-        echo "1. Reboot Now"
-        echo "2. Reboot with Delay"
-        echo "3. Reboot with Date"
-        echo "4. Reboot with Date and Delay"
-        echo "5. Abort Reboot"
-        read option3
-    elif [ "$OPTION" == "3" ]
-    then
-        echo "Logging out..."
-        tell application "System Events" to log out
-    elif [ "$OPTION" == "4" ]
-    then
-        echo "Halting any shutdown ot logout processes..."
-        sudo halt
-    else
-        echo "${RED}Fatal: ${NC}The option you've entered, ${option}, is not on the list."
-    fi
+printf "Here are some options for managing your computer...\n"
+printf "${LIGHTRED}1.${NC} Shutdown\n"
+printf "2. Reboot\n"
+printf "3. Logout\n"
+printf "4. Halt\n\n"
+printf "Enter the number associated with the option you want, followed by [ENTER]: "
+read option
+if [ "$option" = "1" ]
+then
+    echo "Here are the shutdown options:"
+    printf "1. Shutdown Now\n"
+    printf "2. Shutdown with Delay\n"
+    printf "3. Shutdown with Date\n"
+    printf "4. Shutdown with Date and Delay\n"
+    printf "5. Abort Shutdown\n\n"
+    printf "Enter the number associated with the desired option, followed by [ENTER]: "
+    read option2
+elif [ "$OPTION" == "2" ]
+then
+    echo "Here are the reboot options:"
+    printf "1. Reboot Now\n"
+    printf "2. Reboot with Delay\n"
+    printf "3. Reboot with Date\n"
+    printf "4. Reboot with Date and Delay\n"
+    printf "5. Abort Reboot\n"
+    printf "Enter the number associated with the desired option, followed by [ENTER]: "
+    read option3
+elif [ "$OPTION" == "3" ]
+then
+    printf "Logging out..."
+    tell application "System Events" to log out
+elif [ "$OPTION" == "4" ]
+then
+    printf "Halting any shutdown ot logout processes..."
+    sudo halt
+else
+    printf "${RED}Fatal: ${NC}The option you've entered, ${option}, is not on the list.\n\n"
+    testprompt
+fi
