@@ -52,7 +52,7 @@ then
     tell application "System Events" to log out
 elif [ "$OPTION" == "4" ]
 then
-    printf "Halting any shutdown ot logout processes..."
+    printf "Halting any shutdown or logout processes..."
     sudo halt
 else
     printf "${RED}Fatal: ${NC}The option you've entered, ${option}, is not on the list.\n\n"
