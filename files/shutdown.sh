@@ -64,29 +64,29 @@ printf "${RED}\nShutdown${NC}\n"
 
 printf "Here are some options for managing your computer...\n"
 printf "${LIGHTRED}1.${NC} Shutdown\n"
-printf "2. Reboot\n"
-printf "3. Logout\n"
-printf "4. Halt\n\n"
+printf "${LIGHTYELLOW}2.${NC} Reboot\n"
+printf "${LIGHTGREEN}3.${NC} Logout\n"
+printf "${LIGHTBLUE}4.${NC} Halt\n\n"
 printf "Enter the number associated with the option you want, followed by [ENTER]: "
 read option
 if [ "$option" = "1" ]
 then
     echo "Here are the shutdown options:"
-    printf "1. Shutdown Now\n"
-    printf "2. Shutdown with Delay\n"
-    printf "3. Shutdown with Date\n"
-    printf "4. Shutdown with Date and Delay\n"
-    printf "5. Abort Shutdown\n\n"
+    printf "${LIGHTRED}1.${NC} Shutdown Now\n"
+    printf "${LIGHTYELLOW}2.${NC} Shutdown with Delay\n"
+    printf "${LIGHTGREEN}3.${NC} Shutdown with Date\n"
+    printf "${LIGHTBLUE}4.${NC} Shutdown with Date and Delay\n"
+    printf "${LIGHTPURPLE}5.${NC} Abort Shutdown\n\n"
     printf "Enter the number associated with the desired option, followed by [ENTER]: "
     read option2
 elif [ "$OPTION" == "2" ]
 then
     echo "Here are the reboot options:"
-    printf "1. Reboot Now\n"
-    printf "2. Reboot with Delay\n"
-    printf "3. Reboot with Date\n"
-    printf "4. Reboot with Date and Delay\n"
-    printf "5. Abort Reboot\n"
+    printf "${LIGHTRED}1.${NC} Reboot Now\n"
+    printf "${LIGHTYELLOW}2.${NC} Reboot with Delay\n"
+    printf "${LIGHTGREEN}3.${NC} Reboot with Date\n"
+    printf "${LIGHTBLUE}4.${NC} Reboot with Date and Delay\n"
+    printf "${LIGHTPURPLE}5.${NC} Abort Reboot\n"
     printf "Enter the number associated with the desired option, followed by [ENTER]: "
     read option3
 elif [ "$OPTION" == "3" ]
