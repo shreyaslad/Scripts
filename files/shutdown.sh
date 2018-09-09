@@ -19,6 +19,26 @@ WHITE='\033[1;37m'
 NC='\033[0m'
 
 testprompt() {
+if [ "$OSTYPE" = "darwin"* ]
+then
+    #hi
+elif [ "$OSTYPE" = "linux-gnu" ]
+then
+    #hi
+elif [ "$OSTYPE" = "freebsd" ]
+then
+    #hi
+elif [ "$OSTYPE" = "cygwin" ]
+then
+    #hi
+elif [ "$OSTYPE" = "msys"* ]
+then
+    #hi
+else
+    printf "You're running an unsupported operating system...${RED}terminating.${NC}\n\n"
+    exit;
+fi
+
 printf "Here are some options for managing your computer...\n"
 printf "${LIGHTRED}1.${NC} Shutdown\n"
 printf "${LIGHTYELLOW}2.${NC} Reboot\n"
@@ -61,6 +81,26 @@ fi
 }
 
 printf "${RED}\nShutdown${NC}\n"
+
+if [ "$OSTYPE" = "darwin"* ]
+then
+    #hi
+elif [ "$OSTYPE" = "linux-gnu" ]
+then
+    #hi
+elif [ "$OSTYPE" = "freebsd" ]
+then
+    #hi
+elif [ "$OSTYPE" = "cygwin" ]
+then
+    #hi
+elif [ "$OSTYPE" = "msys"* ]
+then
+    #hi
+else
+    printf "You're running an unsupported operating system...${RED}terminating.${NC}\n\n"
+    exit;
+fi
 
 printf "Here are some options for managing your computer...\n"
 printf "${LIGHTRED}1.${NC} Shutdown\n"
