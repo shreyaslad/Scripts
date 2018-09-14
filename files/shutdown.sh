@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./shdn_src/s.sh
+
 shdn() {
 
 # COLOR ENVS
@@ -20,4 +22,14 @@ LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
 NC='\033[0m'
 
+printf "${RED}Shutdown${NC}\n\n"
+printf "Listed below are some options for shutting down your computer.\n"
+printf "${LIGHTRED}1.${NC} Shutdown Now\n"
+printf "${YELLOW}2.${NC} Restart\n"
+printf "${LIGHTGREEN}3.${NC} Abort Shutdown/Restart\n"
+printf "Enter the number associated with the option you want, followed by [ENTER]: "
+read option
+memes
 }
+
+shdn
