@@ -1,5 +1,6 @@
 #!/bin/bash
 
+movepls() {
 # COLOR ENVS
 BLACK='\033[0;30m'
 RED='\033[0;31m'
@@ -138,3 +139,4 @@ printf "\n"
 		printf "${RED}Fatal: ${NC}You entered a value that does not exist. Terminating.\n\n"
 		exit;
 	fi
+}
