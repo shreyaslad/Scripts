@@ -27,9 +27,25 @@ printf "Listed below are some options for shutting down your computer.\n"
 printf "${LIGHTRED}1.${NC} Shutdown Now\n"
 printf "${YELLOW}2.${NC} Restart\n"
 printf "${LIGHTGREEN}3.${NC} Abort Shutdown/Restart\n"
+printf "${YELLOW}4.${NC} Sleep"
 printf "Enter the number associated with the option you want, followed by [ENTER]: "
 read option
-memes
+if [ "$option" == "1" ]
+then
+    echo "The shutdown sequence will being in 10 seconds. Would you like to abor the shutdown process?"
+else if [ "$option" == "2" ]
+then
+    echo "2"
+else if [ "$option" == "3" ]
+then
+    echo "3"
+else if [ "$option" == "4" ]
+then
+    echo "4"
+else
+    printf "${RED}Fatal:${NC} The option you've entered (${option}) is not a valid option, terminating.\n\n"
+    exit;
+fi
 }
 
 shdn
