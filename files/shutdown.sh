@@ -18,31 +18,5 @@ LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
 NC='\033[0m'
 
-printf "\nShutdown\n"
-printf "Detecting Operating System...\n"
-if [[ "$OSTYPE" == "linux-gnu" ]]
-then
-    echo "You're runnning Linux-GNU."
-elif [[ "$OSTYPE" == "darwin"* ]]
-then
-    echo "Type in the time (min) you like the shutdown delay to be (if no delay, press [ENTER]), followed by [ENTER]:"
-    read delay
-    if [ -z "$1" ]
-    then
-        echo "No time supplied, assuming immediate."
-	echo "Shutting down...
-	shutdown -h now
-    else
-	echo "Shutting down in ${delay} minutes."
-	shutdown -h +${delay}i	
-    fi
-elif [[ "$OSTYPE" == "cygwin" ]]
-then
-    echo "You're running a POSIX layer, emulated Linux on Windows."
-elif [[ "$OSTYPE" == "msys" ]]
-then
-  echo "You're running Windows."
-elif [[ "$OSTYPE" == "freebsd"* ]]
-then
-    echo "You're running Berkely Unix"
-fi
+printf "Shutdown\n\n"
+echo "You are running ${OSTYPE}!"
